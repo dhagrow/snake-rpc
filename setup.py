@@ -9,12 +9,19 @@ def get_version():
                 return line.split('=')[1].strip().strip("'")
         return '0.0.0'
 
+def get_readme():
+    with open('README.md') as f:
+        return f.read()
+
 setup(
     name='snekrpc',
     version=get_version(),
     url='https://github.com/dhagrow/snekrpc',
     author='Miguel Turner',
-    author_email='cymrow <at> gmail <dot> com',
+    author_email='cymrow@gmail.com',
+    description='A Python RPC library for prototyping.',
+    long_description=get_readme(),
+    long_description_content_type='text/markdown',
     packages=find_packages(exclude=['test']),
     entry_points={
         'console_scripts': [
