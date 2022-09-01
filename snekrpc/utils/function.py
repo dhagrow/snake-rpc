@@ -4,7 +4,11 @@ import inspect
 import keyword
 import tokenize
 import collections
-from inspect import signature, Parameter as Param
+
+try:
+    from inspect import signature, Parameter as Param
+except ImportError:
+    from funcsigs import signature, Parameter as Param
 
 from .. import errors
 

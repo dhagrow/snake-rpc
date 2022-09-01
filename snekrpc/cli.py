@@ -8,7 +8,6 @@ import json
 import stat
 import argparse
 import datetime
-from inspect import Parameter as Param
 
 from . import logs
 from . import utils
@@ -16,6 +15,7 @@ from . import errors
 from . import registry
 from . import interface
 from . import codec, formatter, service, transport
+from .utils.function import Param
 
 DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 DATE_FORMAT = '%Y-%m-%d'
