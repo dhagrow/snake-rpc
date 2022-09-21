@@ -54,9 +54,9 @@ def pack(root_path, output_path, services, compresslevel):
         fp.write(SHELL_HEADER)
 
         log.debug('compression level set to: %s', compresslevel)
-        z = zipfile.ZipFile(fp, 'a', zipfile.ZIP_DEFLATED,
+        zfp = zipfile.ZipFile(fp, 'a', zipfile.ZIP_DEFLATED,
             compresslevel=compresslevel)
-        with z as zfp:
+        with zfp:
             fpath = '__main__.py'
             log.debug('adding: %s', fpath)
             zfp.writestr(fpath, MAIN)
